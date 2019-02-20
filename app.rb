@@ -7,7 +7,9 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    "hello world"
+    @Player1 = params[:Player1]
+    @Player2 = params[:Player2]
+    erb :play
   end
 
   # start the server if ruby file executed directly

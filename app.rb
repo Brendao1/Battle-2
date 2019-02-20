@@ -3,7 +3,6 @@ require 'sinatra/base'
 class Battle < Sinatra::Base
 
   get '/' do
-    #form here
     erb :index
   end
 

@@ -1,8 +1,14 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
+
   get '/' do
-    'Testing infrastructure working!'
+    #form here
+    erb :index
+  end
+
+  post '/names' do
+    "hello world"
   end
 
   # start the server if ruby file executed directly

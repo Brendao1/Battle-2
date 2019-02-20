@@ -1,22 +1,16 @@
 require "./app.rb"
-
+require_relative "web_helpers"
 
 feature 'Enter names' do
   scenario 'submitting names' do
-    visit('/')
-    fill_in :Player1, with: 'Dave'
-    fill_in :Player2, with: 'Mittens'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content 'Dave vs. Mittens'
   end
 end
 
 feature "Viewing PLayer2's hitpoints" do
   scenario 'view hp' do
-    visit('/')
-    fill_in :Player1, with: 'Dave'
-    fill_in :Player2, with: 'Mittens'
-    click_button 'Submit'
-    expect(page).to have_content "Mitten's HP"  
+    sign_in_and_play
+    expect(page).to have_content "Mittens's HP 2"
   end
 end

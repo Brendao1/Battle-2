@@ -16,6 +16,13 @@ describe Player do
       end
     end
 
+    describe "#attack" do
+      it "inflicts damage on the other player" do
+        expect(dave).to receive(:damage)
+          maria.attack(dave)
+          # why does this have to happen after?
+      end
+    end
 
     describe '#damage' do
       it "reduces hitpoints by 10" do

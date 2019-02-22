@@ -1,6 +1,8 @@
 <%= @Player1.name %> vs. <%= @Player2.name %>
 <p><%= @Player2.name %>'s HP <%=@Player2.hitpoints %></p>
 <!-- <a href= "/attack">Attack</a> -->
+<h1>"It is <%=$game.turn.name%>'s turn"</h1>
+<br>
 <form action="/attack">
   <input type="submit" value="Attack">
 </form>

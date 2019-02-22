@@ -32,3 +32,12 @@ feature "Player 1 Attacks Player 2 reduces Player 2's HP by 10" do
     expect(page).not_to have_content "Mittens 60HP"
   end
 end
+
+feature "After player 1 has attacked it becomes player 2's turn" do
+  scenario "it is player 2's turn" do
+    sign_in_and_play
+    click_button "Attack"
+    click_link "Click OK"
+    expect(page).to have_content "It is Mittens's turn"
+  end
+end

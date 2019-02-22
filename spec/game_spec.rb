@@ -1,12 +1,14 @@
 describe Game do
 
-subject(:game) { described_class.new(player1, player2) }
-let(:player1) { double(:player) }
-let(:player2) { double(:player) }
+subject(:game) { described_class.new('Dave', 'Mittens') }
 
   it 'an attack will cause a player to be damaged' do
-    expect(player2).to receive(:damage)
-    game.attack(player2)
+    expect(game.Player2).to receive(:damage)
+    game.attack(game.Player2)
+  end
+
+  it 'switches turn from player 1 to player 2 after an attack' do
+  expect { game.attack(game.Player2) }.to change { game.turn }.from(game.Player1).to(game.Player2)
   end
 
 

@@ -18,7 +18,7 @@ class Battle < Sinatra::Base
     @Player2 = $Player2.name
     @Player2_hitpoints = 2
     erb :play
-    
+
   end
 
 get '/attack' do

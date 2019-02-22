@@ -1,6 +1,8 @@
 
-<p><%= @Player1.name %> attacked <%=@Player2.name %></p>
 
-<p><%= @Player2.name %> now has <%=@Player2.hitpoints%> points</p>
+
+<p><%= $game.attacker.name %> attacked <%=$game.turn.name %></p>
+<p><%= $game.turn.name %> now has <%=$game.turn.hitpoints%> points</p>
+
 
 <p><a href="/play">Click OK</a>

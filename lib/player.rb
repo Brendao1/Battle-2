@@ -9,10 +9,6 @@ class Player
         @hitpoints = hitpoints
     end
 
-    # def hitpoints
-    #   @hitpoints
-    # end
-
     def attack(player)
       player.damage
     end

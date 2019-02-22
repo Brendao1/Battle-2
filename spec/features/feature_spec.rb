@@ -41,3 +41,20 @@ feature "After player 1 has attacked it becomes player 2's turn" do
     expect(page).to have_content "It is Mittens's turn"
   end
 end
+
+feature "Viewing PLayer1's hitpoints" do
+  scenario 'view hp' do
+    sign_in_and_play
+    expect(page).to have_content "Dave's HP 60"
+  end
+end
+
+feature "Player 2 attacks Player 1 and gets confirmation" do
+  scenario 'get confirmation of attach' do
+    sign_in_and_play
+    click_button "Attack"
+    click_link "Click OK"
+    click_button "Attack"
+    expect(page).to have_content "Mittens attacked Dave"
+  end
+end

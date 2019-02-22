@@ -4,5 +4,10 @@
 <p><%= $game.attacker.name %> attacked <%=$game.turn.name %></p>
 <p><%= $game.turn.name %> now has <%=$game.turn.hitpoints%> points</p>
 
+<%if $game.turn.hitpoints == 0 %>
+"<%=$game.attacker.name%> has won the game, <%= $game.turn.name %> is dead!!!"
 
+<p><a href="/">Play Again</a>
+<%else%>
 <p><a href="/play">Click OK</a>
+<%end%>

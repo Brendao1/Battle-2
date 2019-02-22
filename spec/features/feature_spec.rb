@@ -58,3 +58,12 @@ feature "Player 2 attacks Player 1 and gets confirmation" do
     expect(page).to have_content "Mittens attacked Dave"
   end
 end
+
+feature "Player 2 attacks Player 1 and gets confirmation" do
+  scenario 'get confirmation of attach' do
+    sign_in_and_play
+    10.times{attack_and_click}
+    click_button "Attack"
+    expect(page).to have_content "Dave has won the game, Mittens is dead!!!"
+  end
+end

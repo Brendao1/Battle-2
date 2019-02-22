@@ -1,14 +1,14 @@
 describe Game do
+
+subject(:game) { described_class.new(player1, player2) }
+let(:player1) { double(:player) }
+let(:player2) { double(:player) }
+
   it 'an attack will cause a player to be damaged' do
-    game = Game.new
-    player = Player.new('Dave')
-    expect(player).to receive(:damage)
-    game.attack(player)
+    expect(player2).to receive(:damage)
+    game.attack(player2)
   end
 
-  it 'an attack will cause a player to lose 10 hitpoints' do
-    game = Game.new
-    player = Player.new('Dave')
-    expect { game.attack(player) }.to change{player.hitpoints}.by -10
-  end
+
+
 end
